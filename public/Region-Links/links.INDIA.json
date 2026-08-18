@@ -39,13 +39,13 @@
           "name": "MovieRulz",
           "url": "https://www.5movierulz.support/",
           "logo": "./logo/movies_shows/movierulz.png",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "Vegamovies",
           "url": "https://vegamovie.su/",
           "logo": "./logo/movies_shows/vegamovies.png",
-          "enabled": true
+          "enabled": false
         },
         {
           "name": "HINDILINKS4U",
