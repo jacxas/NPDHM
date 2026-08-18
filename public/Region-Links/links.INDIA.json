@@ -37,19 +37,19 @@
         },
         {
           "name": "MovieRulz",
-          "url": "https://www.5movierulz.support/",
+          "url": "https://www.5movierulz.watch/",
           "logo": "./logo/movies_shows/movierulz.png",
           "enabled": true
         },
         {
           "name": "Vegamovies",
-          "url": "https://vegamovie.su/",
+          "url": "https://vegamovie.site/",
           "logo": "./logo/movies_shows/vegamovies.png",
           "enabled": true
         },
         {
           "name": "HINDILINKS4U",
-          "url": "https://hindilinks4u.ventures/",
+          "url": "https://hindilinks4u.estate/",
           "logo": "./logo/movies_shows/hindilinks4u.png",
           "enabled": true
         },
@@ -79,13 +79,13 @@
         },
         {
           "name": "moviesmod",
-          "url": "https://moviesmod.at/",
+          "url": "https://moviesmod.zone/",
           "logo": "./logo/movies_shows/moviesmod.png",
           "enabled": true
         },
         {
           "name": "world4u",
-          "url": "https://world4ufree.at/",
+          "url": "https://world4ufree.diy/",
           "logo": "./logo/movies_shows/world4u.png",
           "enabled": true
         },
@@ -97,7 +97,7 @@
         },
         {
           "name": "Hindinks4U",
-          "url": "https://hindilinks4u.ventures/",
+          "url": "https://hindilinks4u.estate/",
           "logo": "./logo/movies_shows/hindinks4u.png",
           "enabled": true
         },
@@ -141,7 +141,7 @@
       "sites": [
         {
           "name": "AG48 ANIME",
-          "url": "https://www.ag48anime.site/",
+          "url": "https://www.ag48anime.fun/",
           "logo": "./logo/anime/ag48anime.png",
           "status": "trusted",
           "enabled": true
@@ -174,13 +174,13 @@
         },
         {
           "name": "Anime Lok",
-          "url": "https://animelok.net/",
+          "url": "https://animelok.live/",
           "logo": "./logo/anime/animelok.png",
           "enabled": true
         },
         {
           "name": "Anime Salt",
-          "url": "https://animesalt.ac/",
+          "url": "https://animesalt.link/",
           "logo": "./logo/anime/animesalt.png",
           "enabled": true
         },
@@ -261,7 +261,7 @@
           "name": "Netflix",
           "url": "https://www.netflix.com/",
           "logo": "./logo/paid_apps/netflix.png",
- "enabled": true
+          "enabled": true
         },
         {
           "name": "Viki",
