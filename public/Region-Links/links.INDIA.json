@@ -39,13 +39,13 @@
           "name": "MovieRulz",
           "url": "https://www.5movierulz.support/",
           "logo": "./logo/movies_shows/movierulz.png",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "Vegamovies",
           "url": "https://vegamovie.su/",
           "logo": "./logo/movies_shows/vegamovies.png",
-          "enabled": false
+          "enabled": true
         },
         {
           "name": "HINDILINKS4U",
@@ -261,7 +261,7 @@
           "name": "Netflix",
           "url": "https://www.netflix.com/",
           "logo": "./logo/paid_apps/netflix.png",
-          "enabled": true
+ "enabled": true
         },
         {
           "name": "Viki",
