@@ -57,7 +57,7 @@
         },
         {
           "name": "Spenflix",
-          "url": "https://watch.spencerdevs.xyz/",
+          "url": "https://watch.plex.tv/",
           "logo": "./logo/movies_shows/spenflix.png",
           "enabled": true,
           "status": "ok"
