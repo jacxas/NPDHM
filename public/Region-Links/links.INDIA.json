@@ -43,7 +43,7 @@
         },
         {
           "name": "Vegamovies",
-          "url": "https://vegamovie.se/",
+          "url": "https://vegamovie.ee/",
           "logo": "./logo/movies_shows/vegamovies.png",
           "enabled": true
         },
@@ -180,7 +180,7 @@
         },
         {
           "name": "Anime Salt",
-          "url": "https://animesalt.top/",
+          "url": "https://animesalt.cx/",
           "logo": "./logo/anime/animesalt.png",
           "enabled": true
         },
