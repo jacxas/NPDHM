@@ -37,13 +37,13 @@
         },
         {
           "name": "MovieRulz",
-          "url": "https://www.5movierulz.university/",
+          "url": "https://www.5movierulz.ventures/",
           "logo": "./logo/movies_shows/movierulz.png",
           "enabled": true
         },
         {
           "name": "Vegamovies",
-          "url": "https://vegamoviess.fo/",
+          "url": "https://vegamoviess.xyz/",
           "logo": "./logo/movies_shows/vegamovies.png",
           "enabled": true
         },
