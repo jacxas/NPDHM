@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { db, COLLECTIONS } from "@/lib/db";
+import { consumeRateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,21 +18,8 @@ interface SubmitBody {
   targets?: Target[];
 }
 
-const rateLimit = new Map<string, { count: number; resetAt: number }>();
 const WINDOW_MS = 60 * 60 * 1000; // 1 hour
 const MAX_PER_WINDOW = 5;
-
-function checkRate(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimit.get(ip);
-  if (!entry || entry.resetAt < now) {
-    rateLimit.set(ip, { count: 1, resetAt: now + WINDOW_MS });
-    return true;
-  }
-  if (entry.count >= MAX_PER_WINDOW) return false;
-  entry.count++;
-  return true;
-}
 
 function isValidUrl(u: string): boolean {
   try {
@@ -47,7 +35,7 @@ export async function POST(req: Request) {
   const ip =
     h.get("x-forwarded-for")?.split(",")[0].trim() ?? h.get("x-real-ip") ?? "unknown";
 
-  if (!checkRate(ip)) {
+  if (!(await consumeRateLimit(`site-requests:${ip}`, MAX_PER_WINDOW, WINDOW_MS))) {
     return NextResponse.json({ error: "rate_limited" }, { status: 429 });
   }
 
