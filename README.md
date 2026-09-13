@@ -24,3 +24,7 @@ we'll take a look if its good then sure..
 ## Socials
 
 [Discord](https://discord.com/invite/BPxzYVY5UU)
+
+---
+
+Última actualización: 2026-09-13
