@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getRegionByCode, getLinksForRegion, DEFAULT_REGION_CODE } from "@/lib/data";
+import { getRegionByCode, getLinksForRegion, getRegions, DEFAULT_REGION_CODE } from "@/lib/data";
 import { CATEGORY_META } from "@/lib/constants";
 import { RegionPage } from "@/components/region-page";
 
@@ -37,4 +37,9 @@ export default async function SlugRoute({ params }: { params: { slug: string } }
   const region = await getRegionByCode(slug);
   if (!region) notFound();
   return <RegionPage region={region} />;
+}
+
+export async function generateStaticParams() {
+  const regions = await getRegions();
+  return regions.map((r) => ({ slug: r.code.toLowerCase() }));
 }

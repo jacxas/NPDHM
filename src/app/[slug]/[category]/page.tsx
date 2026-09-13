@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getRegionByCode, getLinksForRegion } from "@/lib/data";
+import { getRegionByCode, getLinksForRegion, getRegions } from "@/lib/data";
 import { CATEGORY_META } from "@/lib/constants";
 import { RegionPage } from "@/components/region-page";
 
@@ -31,4 +31,12 @@ export default async function RegionCategoryRoute({
   const data = await getLinksForRegion(region.code);
   if (!data.categories.find((c) => c.id === category)) notFound();
   return <RegionPage region={region} onlyCategoryId={category} />;
+}
+
+export async function generateStaticParams() {
+  const regions = await getRegions();
+  const cats = Object.keys(CATEGORY_META);
+  return regions.flatMap((r) =>
+    cats.map((category) => ({ slug: r.code.toLowerCase(), category })),
+  );
 }
