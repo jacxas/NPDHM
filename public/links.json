@@ -151,6 +151,62 @@
           "url": "https://streamingunity.win/",
           "logo": "./logo/movies_shows/streamingcommunityz.png",
           "enabled": true
+        },
+        {
+          "name": "DocPlus",
+          "url": "https://docplus.com/home",
+          "logo": "./logo/movies_shows/docplus.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "Documentary Area",
+          "url": "https://www.documentaryarea.com/",
+          "logo": "./logo/movies_shows/documentary-area.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "BasementX",
+          "url": "https://basementx.lol/",
+          "logo": "./logo/movies_shows/basementx.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "CoreFlix",
+          "url": "https://coreflix.tv/",
+          "logo": "./logo/movies_shows/coreflix.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "Cinegram",
+          "url": "https://cinegram.tv/search-language/Spanish/1",
+          "logo": "./logo/movies_shows/cinegram.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "UTelevision",
+          "url": "https://utelevision.cc/movies",
+          "logo": "./logo/movies_shows/utelevision.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "PrimeWire",
+          "url": "https://primewire.mov/home",
+          "logo": "./logo/movies_shows/primewire.png",
+          "enabled": true,
+          "status": "new"
+        },
+        {
+          "name": "Flixer",
+          "url": "https://flixer.gd/",
+          "logo": "./logo/movies_shows/flixer.png",
+          "enabled": true,
+          "status": "new"
         }
       ]
     },
