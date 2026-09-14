@@ -17,8 +17,11 @@ services:
     environment:
       - NODE_ENV=production
       - REDIS_URL=redis://redis:6379
+      - MONGODB_URI=mongodb://mongo:27017
     depends_on:
       redis:
+        condition: service_healthy
+      mongo:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "wget", "-qO-", "http://127.0.0.1/api/ping"]
@@ -42,5 +45,19 @@ services:
       retries: 5
     logging: *default-logging
 
+  mongo:
+    image: mongo:7
+    container_name: tbcpl-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    logging: *default-logging
+
 volumes:
   redis-data:
+  mongo-data:
