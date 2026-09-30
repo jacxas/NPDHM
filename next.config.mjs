@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  // Static export is the GitHub Pages production target; dev needs a full
+  // server so the API routes and admin panel run.
+  output: process.env.NODE_ENV === "development" ? undefined : "export",
   allowedDevOrigins: process.env.BASE44_PUBLIC_HOST_SUFFIX
     ? ["3000-" + process.env.BASE44_PUBLIC_HOST_SUFFIX]
     : [],

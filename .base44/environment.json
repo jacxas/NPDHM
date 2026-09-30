@@ -1,0 +1,17 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/api/ping",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "github_oauth_client_id",
+      "description": "GitHub OAuth App Client ID — GitHub Settings > Developer settings > OAuth Apps; callback <site-url>/api/auth/github/callback",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "github_oauth_client_secret",
+      "description": "GitHub OAuth App Client Secret — from the same OAuth App",
+      "requiredAtBoot": false
+    }
+  ]
+}
