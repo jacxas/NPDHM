@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link2, Tag, Target, Star, Plus, X, Send } from "lucide-react";
 import { useRegions } from "@/components/region-context";
 import { CATEGORY_META } from "@/lib/constants";
+import { normalizeAsset } from "@/lib/utils";
 
 interface TargetRow {
   id: number;
@@ -11,7 +12,7 @@ interface TargetRow {
   category: string;
 }
 
-const SUBMIT_URL = "/api/site-requests";
+const SUBMIT_URL = normalizeAsset("/api/site-requests");
 
 export function RequestForm() {
   const { regions } = useRegions();

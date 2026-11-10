@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { normalizeAsset } from "@/lib/utils";
 
 const PING_INTERVAL_MS = 60_000;
 
@@ -20,7 +21,7 @@ export function LiveUsers() {
 
     async function ping() {
       try {
-        const res = await fetch("/api/ping", { method: "POST", cache: "no-store" });
+        const res = await fetch(normalizeAsset("/api/ping"), { method: "POST", cache: "no-store" });
         if (!res.ok) throw new Error("bad status");
         const data = (await res.json()) as PingResponse;
         if (!cancelled) {

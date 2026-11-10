@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { getSessionUser } from "@/lib/auth/session";
+import { normalizeAsset } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Admin Login · TBCPL",
@@ -31,7 +32,7 @@ export default async function AdminLoginPage({
 
   return (
     <div className="mx-auto flex min-h-[60vh] max-w-md flex-col items-center justify-center gap-6 text-center">
-      <Image src="/logo.png" alt="" width={64} height={64} className="rounded-xl" />
+      <Image src={normalizeAsset("/logo.png")} alt="" width={64} height={64} className="rounded-xl" />
       <div className="space-y-2">
         <h1 className="text-2xl font-bold">Admin sign-in</h1>
         <p className="text-sm text-[var(--fg-muted)]">

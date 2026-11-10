@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { GitCommit, ExternalLink } from "lucide-react";
+import { normalizeAsset } from "@/lib/utils";
 
 interface LatestCommit {
   shortSha: string;
@@ -73,7 +74,7 @@ export function LatestCommitPill() {
     if (cached) setCommit(cached.data);
 
     // 2. Otherwise fetch from API
-    fetch("/api/latest-commit")
+    fetch(normalizeAsset("/api/latest-commit"))
       .then((r) => (r.ok ? r.json() : null))
       .then((j: LatestCommit | null) => {
         if (cancelled || !j || !("shortSha" in j)) return;

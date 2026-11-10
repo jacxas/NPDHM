@@ -122,7 +122,11 @@ export function CommandPaletteProvider({ children, initialIndex, regions }: Prov
                         onSelect={() => { window.open(f.url, "_blank", "noopener,noreferrer"); close(); }}
                         className="flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm aria-selected:bg-[var(--bg-card-hover)]"
                       >
-                        <Image src={normalizeAsset(f.logo)} alt="" width={20} height={20} className="h-5 w-5 object-contain" unoptimized />
+                        {f.logo ? (
+                          <Image src={normalizeAsset(f.logo)} alt="" width={20} height={20} className="h-5 w-5 object-contain" unoptimized />
+                        ) : (
+                          <span className="h-5 w-5 shrink-0" />
+                        )}
                         <div className="flex-1 truncate">
                           <div className="truncate font-medium">{f.name}</div>
                           <div className="truncate text-xs text-[var(--fg-muted)]">{CATEGORY_META[f.categoryId]?.label ?? f.categoryId}</div>
@@ -144,7 +148,11 @@ export function CommandPaletteProvider({ children, initialIndex, regions }: Prov
                           onSelect={() => { window.open(s.url, "_blank", "noopener,noreferrer"); close(); }}
                           className="group flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2 text-sm aria-selected:bg-[var(--bg-card-hover)]"
                         >
-                          <Image src={normalizeAsset(s.logo)} alt="" width={20} height={20} className="h-5 w-5 object-contain" unoptimized />
+                          {s.logo ? (
+                            <Image src={normalizeAsset(s.logo)} alt="" width={20} height={20} className="h-5 w-5 object-contain" unoptimized />
+                          ) : (
+                            <span className="h-5 w-5 shrink-0" />
+                          )}
                           <div className="flex-1 truncate">
                             <div className="truncate font-medium">{s.name}</div>
                             <div className="truncate text-xs text-[var(--fg-muted)]">{CATEGORY_META[s.categoryId]?.label ?? s.categoryName}</div>

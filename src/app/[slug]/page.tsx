@@ -41,5 +41,8 @@ export default async function SlugRoute({ params }: { params: { slug: string } }
 
 export async function generateStaticParams() {
   const regions = await getRegions();
-  return regions.map((r) => ({ slug: r.code.toLowerCase() }));
+  return [
+    ...regions.map((r) => ({ slug: r.code.toLowerCase() })),
+    ...Object.keys(CATEGORY_META).map((slug) => ({ slug })),
+  ];
 }

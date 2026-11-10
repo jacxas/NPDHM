@@ -11,12 +11,16 @@ import { SafetyToast } from "@/components/safety-toast";
 import { CommandPaletteProvider } from "@/components/command-palette";
 import { RegionContextProvider } from "@/components/region-context";
 import { getRegions, buildSearchIndex, DEFAULT_REGION_CODE } from "@/lib/data";
+import { BASE_PATH, getSiteUrl, normalizeAsset } from "@/lib/utils";
 
 const geistSans = Inter({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = JetBrains_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const SITE_URL = getSiteUrl();
+const SITE_ORIGIN = new URL(SITE_URL).origin;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tbcpl.lol"),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: "TBCPL — The Best Couch Potato List",
     template: "%s · TBCPL",
@@ -36,19 +40,19 @@ export const metadata: Metadata = {
     "best streaming list",
     "tbcpl",
   ],
-  authors: [{ name: "TBCPL Team", url: "https://tbcpl.lol" }],
+  authors: [{ name: "TBCPL Team", url: SITE_URL }],
   creator: "TBCPL Team",
   publisher: "TBCPL",
-  manifest: "/manifest.json",
+  manifest: normalizeAsset("/manifest.json"),
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
+      { url: normalizeAsset("/logo.png"), type: "image/png" },
     ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    shortcut: normalizeAsset("/logo.png"),
+    apple: normalizeAsset("/logo.png"),
   },
   alternates: {
-    canonical: "/",
+    canonical: BASE_PATH ? `${BASE_PATH}/` : "/",
   },
   openGraph: {
     type: "website",
@@ -56,11 +60,11 @@ export const metadata: Metadata = {
     title: "TBCPL — The Best Couch Potato List",
     description:
       "A curated, regional list of free streaming sites — movies, anime, manga, live TV and more.",
-    url: "https://tbcpl.lol",
+    url: SITE_URL,
     locale: "en_US",
     images: [
       {
-        url: "/banner.png",
+        url: normalizeAsset("/banner.png"),
         width: 1200,
         height: 630,
         alt: "TBCPL — The Best Couch Potato List",
@@ -72,7 +76,7 @@ export const metadata: Metadata = {
     title: "TBCPL — The Best Couch Potato List",
     description:
       "Curated streaming sites for movies, anime, manga, live TV and more — fast fuzzy search, multi-region.",
-    images: ["/banner.png"],
+    images: [normalizeAsset("/banner.png")],
   },
   robots: {
     index: true,

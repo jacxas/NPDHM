@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, normalizeAsset } from "@/lib/utils";
 import { CATEGORY_META } from "@/lib/constants";
 import { CategoryIcon } from "./category-icon";
 import { useFavorites } from "@/lib/favorites";
@@ -104,7 +104,7 @@ export function Sidebar({ categories }: Props) {
             className="mb-2 block overflow-hidden rounded-md transition hover:opacity-90"
           >
             <Image
-              src="/socials/discord.png"
+              src={normalizeAsset("/socials/discord.png")}
               alt="Join our Discord"
               width={400}
               height={120}
@@ -119,7 +119,7 @@ export function Sidebar({ categories }: Props) {
             className="block overflow-hidden rounded-md transition hover:opacity-90"
           >
             <Image
-              src="/socials/reddit.png"
+              src={normalizeAsset("/socials/reddit.png")}
               alt="Join our subreddit"
               width={400}
               height={120}

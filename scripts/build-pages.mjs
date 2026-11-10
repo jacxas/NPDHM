@@ -53,7 +53,10 @@ try {
 
   const res = spawnSync("npx", ["next", "build"], { stdio: "inherit", cwd: ROOT });
   process.exitCode = res.status ?? 1;
-  if (res.status === 0) console.log("[build-pages] static site written to ./out");
+  if (res.status === 0) {
+    await fs.writeFile(path.join(ROOT, "out", ".nojekyll"), "");
+    console.log("[build-pages] static site written to ./out");
+  }
 } finally {
   for (const dir of moved) {
     try {

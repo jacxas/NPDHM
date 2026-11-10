@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { ThemeSwitcher } from "./theme-switcher";
 import { CountrySelect } from "./country-select";
-import { cn } from "@/lib/utils";
+import { cn, normalizeAsset } from "@/lib/utils";
 import { useCommandPalette } from "./command-palette";
 
 const NAV = [
@@ -46,7 +46,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-[1600px] items-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-4 md:px-6 md:py-3">
         <Link href="/" className="flex shrink-0 items-center gap-2 font-bold">
-          <Image src="/logo.png" alt="TBCPL" width={28} height={28} className="h-7 w-7 rounded" />
+          <Image src={normalizeAsset("/logo.png")} alt="TBCPL" width={28} height={28} className="h-7 w-7 rounded" />
           <span className="hidden text-base sm:inline">TBCPL</span>
         </Link>
 

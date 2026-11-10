@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Shield, X } from "lucide-react";
+import { normalizeAsset } from "@/lib/utils";
 
 const KEY = "tbcpl-safety-dismissed-v1";
 
@@ -49,11 +50,11 @@ export function SafetyToast() {
           <p className="mt-1 text-[var(--fg-muted)]">
             Use{" "}
             <a className="inline-flex items-center gap-1 text-[var(--fg)] underline" href="https://brave.com/" target="_blank" rel="noreferrer">
-              <Image src="/assets/brave.png" alt="" width={14} height={14} /> Brave
+              <Image src={normalizeAsset("/assets/brave.png")} alt="" width={14} height={14} /> Brave
             </a>{" "}
             or{" "}
             <a className="inline-flex items-center gap-1 text-[var(--fg)] underline" href="https://ublockorigin.com/" target="_blank" rel="noreferrer">
-              <Image src="/assets/ublock.png" alt="" width={14} height={14} /> uBlock Origin
+              <Image src={normalizeAsset("/assets/ublock.png")} alt="" width={14} height={14} /> uBlock Origin
             </a>{" "}
             to stop unwanted popups and ads.
           </p>
