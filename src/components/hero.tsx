@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { normalizeAsset } from "@/lib/utils";
 import { LatestCommitPill } from "./latest-commit-pill";
 import { LiveUsers } from "./live-users";
 
@@ -33,7 +34,7 @@ export function Hero({ regionFlag, regionName, stats }: Props) {
         {/* LEFT: title + tagline */}
         <div className="min-w-0">
           <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="TBCPL" width={44} height={44} className="h-10 w-10 rounded-xl md:h-11 md:w-11" />
+            <Image src={normalizeAsset("/logo.png")} alt="TBCPL" width={44} height={44} className="h-10 w-10 rounded-xl md:h-11 md:w-11" />
             <div>
               <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">The Best Couch Potato List</div>
               <h1 className="text-2xl font-extrabold leading-tight tracking-tight md:text-4xl">

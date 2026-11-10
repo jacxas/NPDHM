@@ -120,7 +120,7 @@ export function SiteCard({ site, categoryId }: Props) {
       </div>
 
       <div className="relative flex h-14 w-full items-center justify-center px-4">
-        {imgError ? (
+        {imgError || !site.logo ? (
           <div className="line-clamp-2 text-center text-sm font-semibold">{site.name}</div>
         ) : (
           <Image

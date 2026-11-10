@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LogOut } from "lucide-react";
 import type { SessionUser } from "@/lib/auth/session";
+import { normalizeAsset } from "@/lib/utils";
 
 export function AdminTopbar({ user }: { user: SessionUser | null }) {
   return (
@@ -16,7 +17,7 @@ export function AdminTopbar({ user }: { user: SessionUser | null }) {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
         <Link href="/admin-panel" className="flex items-center gap-2 font-bold">
-          <Image src="/logo.png" alt="" width={24} height={24} className="rounded" />
+          <Image src={normalizeAsset("/logo.png")} alt="" width={24} height={24} className="rounded" />
           <span>TBCPL Admin</span>
         </Link>
         <div className="flex items-center gap-3">

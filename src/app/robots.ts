@@ -1,15 +1,21 @@
 import type { MetadataRoute } from "next";
+import { BASE_PATH, getSiteUrl } from "@/lib/utils";
 
 export default function robots(): MetadataRoute.Robots {
+  const siteUrl = getSiteUrl();
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin-panel", "/admin-panel/", "/api/"],
+        disallow: [
+          `${BASE_PATH}/admin-panel`,
+          `${BASE_PATH}/admin-panel/`,
+          `${BASE_PATH}/api/`,
+        ],
       },
     ],
-    sitemap: "https://tbcpl.lol/sitemap.xml",
-    host: "https://tbcpl.lol",
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: new URL(siteUrl).origin,
   };
 }

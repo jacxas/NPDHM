@@ -31,17 +31,17 @@ export function addRecent(item: Omit<Recent, "visitedAt">) {
 }
 
 async function fetchValidUrlSet(): Promise<Set<string>> {
-  const regionsRes = await fetch("/regions.json", { cache: "no-store" });
+  const regionsRes = await fetch(normalizeAsset("/regions.json"), { cache: "no-store" });
   const regionsData = await regionsRes.json();
   const codes: string[] = (regionsData.regions || [])
     .filter((r: { enabled?: boolean }) => r.enabled !== false)
     .map((r: { code: string }) => r.code);
 
   const files = [
-    "/links.json",
+    normalizeAsset("/links.json"),
     ...codes
       .filter((c) => c !== "USA")
-      .map((c) => `/Region-Links/links.${c}.json`),
+      .map((c) => normalizeAsset(`/Region-Links/links.${c}.json`)),
   ];
 
   const valid = new Set<string>();
@@ -133,14 +133,16 @@ export function RecentlyVisited() {
             rel="noreferrer noopener"
             className="tbcpl-card flex shrink-0 items-center gap-2 px-3 py-2 text-sm"
           >
-            <Image
-              src={normalizeAsset(r.logo)}
-              alt=""
-              width={20}
-              height={20}
-              className="h-5 w-5 object-contain"
-              unoptimized
-            />
+            {r.logo ? (
+              <Image
+                src={normalizeAsset(r.logo)}
+                alt=""
+                width={20}
+                height={20}
+                className="h-5 w-5 object-contain"
+                unoptimized
+              />
+            ) : null}
             <span>{r.name}</span>
           </a>
         ))}

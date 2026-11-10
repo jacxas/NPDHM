@@ -66,14 +66,18 @@ export function FavoritesSection() {
               <Star size={12} fill="currentColor" />
             </button>
             <div className="flex h-10 w-full items-center justify-center px-2">
-              <Image
-                src={normalizeAsset(fav.logo)}
-                alt={fav.name}
-                width={120}
-                height={40}
-                className="max-h-10 w-auto object-contain"
-                unoptimized
-              />
+              {fav.logo ? (
+                <Image
+                  src={normalizeAsset(fav.logo)}
+                  alt={fav.name}
+                  width={120}
+                  height={40}
+                  className="max-h-10 w-auto object-contain"
+                  unoptimized
+                />
+              ) : (
+                <span className="line-clamp-2 text-center text-xs font-semibold">{fav.name}</span>
+              )}
             </div>
             <div className="truncate text-[10px] text-[var(--fg-muted)]">{fav.name}</div>
           </a>
