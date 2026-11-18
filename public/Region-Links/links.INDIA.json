@@ -43,7 +43,7 @@
         },
         {
           "name": "Vegamovies",
-          "url": "https://vegamovies15.co.in/",
+          "url": "https://vegamovies16.co.in/",
           "logo": "./logo/movies_shows/vegamovies.png",
           "enabled": true
         },
@@ -79,7 +79,7 @@
         },
         {
           "name": "moviesmod",
-          "url": "https://moviesmod.tw/",
+          "url": "https://moviesmod.fi/",
           "logo": "./logo/movies_shows/moviesmod.png",
           "enabled": true
         },
@@ -210,7 +210,7 @@
       "sites": [
         {
           "name": "natomanga",
-          "url": "https://www.manganami.com/",
+          "url": "https://www.natumanga.com/",
           "logo": "./logo/manga/natomanga.png",
           "status": "new",
           "enabled": true
