@@ -168,7 +168,7 @@
         },
         {
           "name": "BasementX",
-          "url": "https://basementx.lol/",
+          "url": "https://basement.rest/",
           "logo": "./logo/movies_shows/basementx.png",
           "enabled": true,
           "status": "new"
